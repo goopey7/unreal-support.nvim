@@ -12,7 +12,7 @@ In your `init.lua` add this line
 ```lua
 require("unreal-support").setup()
 ```
-when `setup()` is called with no arguments, the plugin will scan for the latest version of Unreal Engine, and the project you are editing. 
+when `setup()` is called with no arguments, the plugin will scan for the project you are editing. If one is found it will then also scan for the latest version of Unreal Engine, and provide the Unreal commands.
 
 ### Options for `setup()` (not required)
 | Option   |      Description      |
