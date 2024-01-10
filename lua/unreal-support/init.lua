@@ -15,7 +15,6 @@ M.setup = function(opts)
 	end
 
 	if not M.project_path then
-		print("Unreal Engine project not found")
 		return
 	else
 		M.project_name = utils.get_project_name(M.project_path)
