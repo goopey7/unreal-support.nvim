@@ -1,4 +1,4 @@
-# Develop on Unreal Engine 5.3 with Neovim - Only tested on Windows
+# Develop on Unreal Engine 5.3 with Neovim - Only tested on Windows - WIP
 
 ## Quickstart
 Install with your favorite plugin manager
@@ -19,6 +19,15 @@ when `setup()` is called with no arguments, the plugin will scan for the project
 |----------|:-------------:|
 | engine_path | manually specify Unreal Engine path |
 | project_path | manually specify Unreal Project path |
+
+## Features
+| Feature   |      Status      |
+|----------|:-------------:|
+| Code Completion / Intellisense | works on Windows |
+| BuildEditor | works on Windows |
+| Run | Unimplemented |
+| Cook | Unimplemented |
+| NeovimSourceCodeAccess (set editor to Neovim in UE5) | Unimplemented |
 
 ## Code Completion
 You need llvm installed and clangd setup.
