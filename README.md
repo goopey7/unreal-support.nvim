@@ -14,6 +14,13 @@ require("unreal-support").setup()
 ```
 when `setup()` is called with no arguments, the plugin will scan for the project you are editing. If one is found it will then also scan for the latest version of Unreal Engine, and provide the Unreal commands.
 
+### Linux Only
+create a .clangd file in your unreal projects directory or your home directory with the following content
+```
+CompileFlags:
+  Add: [-ferror-limit=0]
+```
+
 ### Options for `setup()` (not required)
 | Option   |      Description      |
 |----------|:-------------:|
