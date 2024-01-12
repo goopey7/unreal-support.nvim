@@ -1,4 +1,4 @@
-# Develop on Unreal Engine 5.3 with Neovim - Only tested on Windows - WIP
+# Develop on Unreal Engine 5.3 with Neovim - WIP
 
 ## Quickstart
 Install with your favorite plugin manager
