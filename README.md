@@ -1,4 +1,4 @@
-# Develop on Unreal Engine 5.3 with Neovim - WIP
+# Develop on Unreal Engine 5.3 with Neovim
 
 ## Quickstart
 Install with your favorite plugin manager
@@ -30,13 +30,16 @@ CompileFlags:
 ## Features
 | Feature   |      Status      |
 |----------|:-------------:|
-| Code Completion / Intellisense | works on Windows |
-| BuildEditor | works on Windows |
+| Code Completion / Intellisense | works on Windows/Linux |
+| BuildEditor | works on Windows/Linux |
 | Run | Unimplemented |
 | Cook | Unimplemented |
 | NeovimSourceCodeAccess (set editor to Neovim in UE5) | Unimplemented |
 
 ## Code Completion
-You need llvm installed and clangd setup.
+You need llvm installed and clangd setup with your LSP.
 
 then simply run `:UnrealGen` and restart the LSP when it's finished
+
+## Contributing
+Contributions are welcome! Please make a pull request on GitHub.
