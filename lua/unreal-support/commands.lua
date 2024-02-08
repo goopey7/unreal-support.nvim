@@ -21,6 +21,15 @@ local function build_script_path()
 	return build_script
 end
 
+local function editor_binary()
+	local usp = require("unreal-support")
+	if p == "\\" then
+		return "\"" .. usp.engine_path .. "\\Engine\\Binaries\\Win64\\UnrealEditor.exe" .. "\""
+	else
+		return usp.engine_path .. "/Engine/Binaries/Linux/UnrealEditor"
+	end
+end
+
 M.buildEditor = function()
 	local usp = require("unreal-support")
 	local platform = "Win64"
@@ -69,6 +78,15 @@ M.gen = function()
 end
 
 M.runEditor = function()
+	local usp = require("unreal-support")
+	local platform = "Win64"
+	local project_file_path = "\"" .. usp.project_path .. p .. usp.project_name .. ".uproject\""
+	if p == "/" then
+		platform = "Linux"
+		project_file_path = usp.project_path .. p .. usp.project_name .. ".uproject"
+	end
+	local command = "\"" .. editor_binary() .. "\" " .. "-project=\"" .. project_file_path .. "\""
+	run_terminal_command(command)
 end
 
 M.runGame = function()
@@ -85,7 +103,7 @@ M.clean = function()
 	local command = "\"" .. build_script_path() .. "\" " ..
 		"-project=\"" ..
 		project_file_path ..
-		" -game -engine " .. usp.project_name .. " " .. platform .. " Development -Clean"
+		"\" -game -engine " .. usp.project_name .. " " .. platform .. " Development -Clean"
 	run_terminal_command(command)
 end
 

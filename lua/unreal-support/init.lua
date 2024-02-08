@@ -18,7 +18,17 @@ M.setup = function(opts)
 		return
 	else
 		M.project_name = utils.get_project_name(M.project_path)
-		print("Unreal Engine project found: " .. M.project_name)
+
+		-- Call the callback function if provided
+		if opts and opts.onProjectLoaded and type(opts.onProjectLoaded) == "function" then
+			opts.onProjectLoaded(M.project_path, M.project_name)
+		end
+	end
+
+	if opts and opts.engine_path then
+		M.engine_path = opts.engine_path
+	else
+		M.engine_path = utils.scan_engine_path()
 	end
 
 	vim.api.nvim_create_user_command('UnrealBuildEditor', commands.buildEditor, {})
@@ -32,11 +42,6 @@ M.setup = function(opts)
 	vim.api.nvim_create_user_command('UnrealEnginePath', commands.engine_path, {})
 	vim.api.nvim_create_user_command('UnrealProjectPath', commands.project_path, {})
 
-	if opts and opts.engine_path then
-		M.engine_path = opts.engine_path
-	else
-		M.engine_path = utils.scan_engine_path()
-	end
 end
 
 return M
