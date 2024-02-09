@@ -20,8 +20,8 @@ M.setup = function(opts)
 		M.project_name = utils.get_project_name(M.project_path)
 
 		-- Call the callback function if provided
-		if opts and opts.onProjectLoaded and type(opts.onProjectLoaded) == "function" then
-			opts.onProjectLoaded(M.project_path, M.project_name)
+		if opts and opts.on_project_loaded and type(opts.on_project_loaded) == "function" then
+			opts.on_project_loaded(M.project_path, M.project_name)
 		end
 	end
 

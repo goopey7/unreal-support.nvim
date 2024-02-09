@@ -26,6 +26,7 @@ CompileFlags:
 |----------|:-------------:|
 | engine_path | manually specify Unreal Engine path |
 | project_path | manually specify Unreal Project path |
+| on_project_loaded | callback function which gets called when the plugin finds an unreal project |
 
 ## Features
 | Feature   |      Status      |
